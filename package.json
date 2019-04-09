@@ -1,0 +1,15 @@
+{
+  "name": "project-name",
+  "version": "0.0.1",
+  "description": "A description for your project.",
+  "main": "./dist/your-main-js-file.js",
+  "author": {
+    "name": "YOUR NAME",
+    "url": "http://link-to-your-website.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://link-to-your-git-repo.com"
+  }
+}
