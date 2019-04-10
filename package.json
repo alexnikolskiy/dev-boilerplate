@@ -12,6 +12,12 @@
     "type": "git",
     "url": "http://link-to-your-git-repo.com"
   },
+  "scripts": {
+    "stylelint": "npx stylelint \"src/sass/**/*.scss\"",
+    "stylelint:fix": "npx stylelint --fix \"src/sass/**/*.scss\"",
+    "lint": "npx eslint \"**/*.js\"",
+    "lint:fix": "npx eslint \"**/*.js\" --fix"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
