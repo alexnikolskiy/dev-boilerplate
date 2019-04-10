@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "plugins": ["jest"],
+  "extends": [
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "no-param-reassign": [2, {
+      "props": false
+    }],
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+    "prettier/prettier": ["error"]
+  }
+}
