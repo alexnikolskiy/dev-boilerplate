@@ -20,7 +20,9 @@
     "stylelint": "npx stylelint \"src/sass/**/*.scss\"",
     "stylelint:fix": "npx stylelint --fix \"src/sass/**/*.scss\"",
     "lint": "npx eslint \"**/*.js\"",
-    "lint:fix": "npx eslint \"**/*.js\" --fix"
+    "lint:fix": "npx eslint \"**/*.js\" --fix",
+    "prettier": "npx prettier \"**/*.js\"",
+    "prettier:fix": "npx prettier --write \"**/*.js\" --fix"
   },
   "husky": {
     "hooks": {
@@ -34,6 +36,7 @@
     ],
     "*.js": [
       "npm run lint:fix",
+      "npm run prettier:fix",
       "git add"
     ]
   },
