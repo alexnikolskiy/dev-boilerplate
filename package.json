@@ -41,7 +41,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
     "cross-env": "^5.2.0",
     "del": "^4.1.0",
@@ -70,6 +74,7 @@
     "lint-staged": "^8.1.5",
     "node-normalize-scss": "^8.0.0",
     "postcss-sorting": "^4.1.0",
+    "posthtml-include": "^1.2.0",
     "prettier": "^1.16.4",
     "stylelint": "^9.10.1",
     "stylelint-config-airbnb": "0.0.0",
