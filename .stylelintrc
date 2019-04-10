@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-airbnb",
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "number-leading-zero": "always",
+    "order/properties-alphabetical-order": true
+  }
+}
