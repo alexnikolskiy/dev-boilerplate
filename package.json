@@ -12,11 +12,30 @@
     "type": "git",
     "url": "http://link-to-your-git-repo.com"
   },
+  "browserslist": [
+    "last 2 version",
+    "not dead"
+  ],
   "scripts": {
     "stylelint": "npx stylelint \"src/sass/**/*.scss\"",
     "stylelint:fix": "npx stylelint --fix \"src/sass/**/*.scss\"",
     "lint": "npx eslint \"**/*.js\"",
     "lint:fix": "npx eslint \"**/*.js\" --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.scss": [
+      "npm run stylelint:fix",
+      "git add"
+    ],
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^5.16.0",
