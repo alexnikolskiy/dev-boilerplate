@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')({ lazy: true });
 const del = require('del');
@@ -43,9 +44,11 @@ function sass() {
 }
 
 function html() {
+  const isSpriteExist = fs.existsSync(`${paths.dest.img}/sprite.svg`);
+
   return gulp
     .src(`${paths.src.html}**/*.html`)
-    .pipe(plugins.posthtml([include()]))
+    .pipe(plugins.if(isSpriteExist, plugins.posthtml([include()])))
     .pipe(plugins.htmlmin({ collapseWhitespace: false }))
     .pipe(gulp.dest(paths.dest.root));
 }
