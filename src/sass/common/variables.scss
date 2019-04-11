@@ -1,0 +1,23 @@
+// colors
+$primary: #000000;
+$secondary: #ffffff;
+
+$primary-text-color: #000000;
+$secondary-text-color: #ffffff;
+
+// fonts
+$font-family: "Roboto", sans-serif;
+$font-size: 16;
+$font-color: $primary-text-color;
+$font-weight: 400;
+$line-height: 1.5;
+
+// layout
+$mobile-width: 480px;
+$tablet-width: 768px;
+$laptop-width: 992px;
+$desktop-width: 1200px;
+
+// retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
