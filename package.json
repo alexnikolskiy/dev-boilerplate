@@ -22,7 +22,9 @@
     "lint": "npx eslint \"**/*.js\"",
     "lint:fix": "npx eslint \"**/*.js\" --fix",
     "prettier": "npx prettier \"**/*.js\"",
-    "prettier:fix": "npx prettier --write \"**/*.js\""
+    "prettier:fix": "npx prettier --write \"**/*.js\"",
+    "dev": "cross-env NODE_ENV=development npx gulp dev",
+    "build": "cross-env NODE_ENV=production npx gulp build"
   },
   "husky": {
     "hooks": {
