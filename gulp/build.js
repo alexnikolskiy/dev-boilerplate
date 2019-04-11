@@ -66,6 +66,13 @@ function images() {
     .pipe(gulp.dest(file => file.base));
 }
 
+function webp() {
+  return gulp
+    .src(`${paths.src.img}**/*.{png,jpg}`)
+    .pipe(plugins.webp({ quality: 80 }))
+    .pipe(gulp.dest(file => file.base));
+}
+
 function sprite() {
   return gulp
     .src(`${paths.src.img}**/*.svg`)
@@ -80,7 +87,7 @@ function sprite() {
 
 function copy() {
   return gulp
-    .src([`${paths.src.img}**/*.{png,jpg,jpeg}`, `${paths.src.fonts}**/*.{woff,woff2}`], {
+    .src([`${paths.src.img}**/*.{png,jpg,jpeg,webp}`, `${paths.src.fonts}**/*.{woff,woff2}`], {
       base: paths.src.root,
     })
     .pipe(gulp.dest(paths.dest.root));
@@ -99,6 +106,7 @@ module.exports = {
   html,
   sprite,
   images,
+  webp,
   copy,
   js,
 };
