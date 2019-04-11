@@ -22,9 +22,16 @@ function watch() {
 }
 
 function serve() {
+  const isProxy = !!+process.env.HTTP_PROXY;
+
   browserSync.init({
     port: process.env.HTTP_DEV_PORT,
-    proxy: process.env.HTTP_PROXY && `${process.env.HTTP_HOST}:${process.env.HTTP_PORT}`,
+    server: !isProxy && `${paths.dest.root}`,
+    proxy: isProxy && `${process.env.HTTP_HOST}:${process.env.HTTP_PORT}`,
+    notify: false,
+    open: true,
+    cors: true,
+    ui: false,
   });
 }
 
