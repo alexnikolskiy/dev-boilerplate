@@ -77,7 +77,7 @@ function sprite() {
 
 function copy() {
   return gulp
-    .src([`${paths.src.img}**/*.{png,jpg}`], {
+    .src([`${paths.src.img}**/*.{png,jpg,jpeg}`, `${paths.src.fonts}**/*.{woff,woff2}`], {
       base: paths.src.root,
     })
     .pipe(gulp.dest(paths.dest.root));
