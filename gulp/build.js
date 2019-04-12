@@ -11,12 +11,10 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 
 const paths = require('./paths');
-const webpackConfig = require('../webpack.config.js');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-webpackConfig.mode = isDevelopment ? 'development' : 'production';
-webpackConfig.devtool = isDevelopment ? 'inline-source-map' : false;
+const webpackConfig = isDevelopment ? require('../webpack.dev') : require('../webpack.prod');
 
 function clean() {
   return del('build');
@@ -51,7 +49,7 @@ function html() {
     .src(`${paths.src.html}**/*.html`)
     .pipe(plugins.if(isSpriteExist, plugins.posthtml([include()])))
     .pipe(plugins.htmlmin({ collapseWhitespace: false }))
-    .pipe(gulp.dest(paths.dest.root));
+    .pipe(gulp.dest(file => file.base));
 }
 
 function images() {

@@ -4,7 +4,7 @@ const { watch, serve } = require('./gulp/watch');
 
 gulp.task(
   'default',
-  gulp.series(clean, gulp.parallel(sass, js, gulp.series(images, sprite, html, copy))),
+  gulp.series(clean, gulp.parallel(sass, gulp.series(images, sprite, html, js, copy))),
 );
 
 gulp.task('build', gulp.series('default'));
