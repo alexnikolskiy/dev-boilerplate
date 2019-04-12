@@ -6,6 +6,7 @@ const include = require('posthtml-include');
 const normalize = require('node-normalize-scss');
 const autoprefixer = require('autoprefixer');
 const sorting = require('postcss-sorting');
+const webpConvert = require('imagemin-webp');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 
@@ -68,8 +69,9 @@ function images() {
 
 function webp() {
   return gulp
-    .src(`${paths.src.img}**/*.{png,jpg}`)
-    .pipe(plugins.webp({ quality: 80 }))
+    .src(`${paths.src.img}**/*.{png,jpg,jpeg}`)
+    .pipe(plugins.imagemin([webpConvert({ quality: 80 })]))
+    .pipe(plugins.extReplace('.webp'))
     .pipe(gulp.dest(file => file.base));
 }
 
