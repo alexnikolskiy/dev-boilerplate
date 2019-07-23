@@ -1,8 +1,6 @@
-const fs = require('fs');
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')({ lazy: true });
 const del = require('del');
-const include = require('posthtml-include');
 const normalize = require('node-normalize-scss');
 const autoprefixer = require('autoprefixer');
 const sorting = require('postcss-sorting');
@@ -40,16 +38,6 @@ function sass() {
       ),
     )
     .pipe(gulp.dest(paths.dest.css));
-}
-
-function html() {
-  const isSpriteExist = fs.existsSync(`${paths.dest.img}/sprite.svg`);
-
-  return gulp
-    .src(`${paths.src.html}**/*.html`)
-    .pipe(plugins.if(isSpriteExist, plugins.posthtml([include()])))
-    .pipe(plugins.htmlmin({ collapseWhitespace: false }))
-    .pipe(gulp.dest(file => file.base));
 }
 
 function images() {
@@ -103,7 +91,6 @@ function js() {
 module.exports = {
   clean,
   sass,
-  html,
   sprite,
   images,
   webp,
