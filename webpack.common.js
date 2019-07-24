@@ -14,7 +14,12 @@ module.exports = {
       {
         test: /\.html$/,
         use: [
-          'html-loader',
+          {
+            loader: 'html-loader',
+            options: {
+              attrs: false,
+            },
+          },
           {
             loader: 'posthtml-loader',
             options: {
