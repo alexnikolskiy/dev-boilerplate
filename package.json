@@ -88,7 +88,7 @@
     "posthtml-include": "^1.2.0",
     "posthtml-loader": "^1.0.1",
     "prettier": "^1.18.2",
-    "stylelint": "^10.1.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-airbnb": "0.0.0",
     "stylelint-order": "^3.0.1",
     "stylelint-scss": "^3.9.2",
